@@ -38,7 +38,7 @@ module.exports = env => {
     // Module sizes to show in report by default.
     // Should be one of `stat`, `parsed` or `gzip`.
     // See "Definitions" section for more information.
-    defaultSizes: 'parsed',
+    defaultSizes: 'gzip',
     // Automatically open report in default browser
     openAnalyzer: Boolean(analyze),
     // If `true`, Webpack Stats JSON file will be generated in bundles output directory
