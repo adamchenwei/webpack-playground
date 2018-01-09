@@ -79,6 +79,11 @@ module.exports = env => {
       poll: 1000
     },
     watch: Boolean(watch),
-    plugins: [HtmlWebpackPluginConfig], //configedAnalyzer
+    plugins: [HtmlWebpackPluginConfig, configedAnalyzer], //
+    devServer: {
+      contentBase: path.join(__dirname, "dist"),
+      compress: false,
+      port: 9123,
+    }
   };
 }
