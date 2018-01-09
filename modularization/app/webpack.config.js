@@ -1,13 +1,17 @@
+
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
+const DefinePlugin = require('webpack').DefinePlugin;
 
 const SOURCE_DIR = './src';
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: SOURCE_DIR + '/index.html',
   filename: 'index.html',
   inject: 'body'
+});
+const Defined = new DefinePlugin({
+  'process.env.NODE_ENV': JSON.stringify('production')
 });
 
 module.exports = env => {
@@ -79,7 +83,7 @@ module.exports = env => {
       poll: 1000
     },
     watch: Boolean(watch),
-    plugins: [HtmlWebpackPluginConfig, configedAnalyzer], //
+    plugins: [HtmlWebpackPluginConfig, Defined, configedAnalyzer], //
     devServer: {
       contentBase: path.join(__dirname, "dist"),
       compress: false,
