@@ -1,0 +1,10 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "modularization/a-module/package.json",
+        "modularization/app/package.json"
+      ]
+    }
+  }
+}
